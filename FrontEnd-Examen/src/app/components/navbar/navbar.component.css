@@ -1,0 +1,5 @@
+.example-spacer {
+  flex: 1 1 auto;
+  margin: 0 16px;
+  min-width: 16px;
+}
