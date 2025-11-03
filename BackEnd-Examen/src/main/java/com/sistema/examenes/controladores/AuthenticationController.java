@@ -5,8 +5,9 @@ import com.sistema.examenes.excepciones.UsuarioNotFoundException;
 import com.sistema.examenes.modelo.JwtRequest;
 import com.sistema.examenes.modelo.JwtResponse;
 import com.sistema.examenes.modelo.Usuario;
-import com.sistema.examenes.servicios.impl.UserDetailsServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.sistema.examenes.servicios.LoginDetailsService;
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -19,16 +20,15 @@ import java.security.Principal;
 
 @RestController
 @CrossOrigin("*")
+@RequiredArgsConstructor
 public class AuthenticationController {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
 
-    @Autowired
-    private UserDetailsServiceImpl userDetailsService;
+    private final AuthenticationManager authenticationManager;
 
-    @Autowired
-    private JwtUtils jwtUtils;
+    private final LoginDetailsService userDetailsService;
+
+    private final  JwtUtils jwtUtils;
 
     @PostMapping("/generate-token")
     public ResponseEntity<?> generarToken(@RequestBody JwtRequest jwtRequest) throws Exception {

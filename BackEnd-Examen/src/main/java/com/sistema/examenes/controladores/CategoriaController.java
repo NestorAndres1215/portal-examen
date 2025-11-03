@@ -2,17 +2,18 @@ package com.sistema.examenes.controladores;
 
 import com.sistema.examenes.modelo.Categoria;
 import com.sistema.examenes.servicios.CategoriaService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/categoria")
 @CrossOrigin("*")
+@RequiredArgsConstructor
 public class CategoriaController {
 
-    @Autowired
-    private CategoriaService categoriaService;
+
+    private final CategoriaService categoriaService;
 
     @PostMapping("/")
     public ResponseEntity<Categoria> guardarCategoria(@RequestBody Categoria categoria){

@@ -3,7 +3,7 @@ package com.sistema.examenes.controladores;
 import com.sistema.examenes.modelo.Categoria;
 import com.sistema.examenes.modelo.Examen;
 import com.sistema.examenes.servicios.ExamenService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,10 +12,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/examen")
 @CrossOrigin("*")
+@RequiredArgsConstructor
 public class ExamenController {
 
-    @Autowired
-    private ExamenService examenService;
+    private final ExamenService examenService;
 
     @PostMapping("/")
     public ResponseEntity<Examen> guardarExamen(@RequestBody Examen examen){

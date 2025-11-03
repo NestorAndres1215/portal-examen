@@ -1,4 +1,5 @@
 package com.sistema.examenes.modelo;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -6,45 +7,19 @@ import java.util.Set;
 
 @Entity
 @Table(name = "roles")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Rol {
 
     @Id
     private Long rolId;
+
+    @Column(nullable = false, unique = true)
     private String rolNombre;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "rol")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "rol")
+    @Builder.Default
     private Set<UsuarioRol> usuarioRoles = new HashSet<>();
-
-    public Rol(){
-
-    }
-
-    public Rol(Long rolId, String rolNombre) {
-        this.rolId = rolId;
-        this.rolNombre = rolNombre;
-    }
-
-    public Long getRolId() {
-        return rolId;
-    }
-
-    public void setRolId(Long rolId) {
-        this.rolId = rolId;
-    }
-
-    public String getRolNombre() {
-        return rolNombre;
-    }
-
-    public void setRolNombre(String rolNombre) {
-        this.rolNombre = rolNombre;
-    }
-
-    public Set<UsuarioRol> getUsuarioRoles() {
-        return usuarioRoles;
-    }
-
-    public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
-        this.usuarioRoles = usuarioRoles;
-    }
 }

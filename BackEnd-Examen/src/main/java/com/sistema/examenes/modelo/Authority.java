@@ -1,18 +1,18 @@
 package com.sistema.examenes.modelo;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 
+
+@Getter
+@AllArgsConstructor
 public class Authority implements GrantedAuthority {
 
-    private String authority;
-
-    public Authority(String authority) {
-        this.authority = authority;
-    }
+    private final String authority;
 
     @Override
     public String getAuthority() {
-        return this.authority;
+        return authority;
     }
-
 }
