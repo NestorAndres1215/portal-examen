@@ -8,6 +8,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import static com.sistema.examenes.util.MensajesConstantes.USUARIO_NO_ENCONTRADO;
+
 @Service
 @RequiredArgsConstructor
 public class LoginDetailsService implements UserDetailsService {
@@ -15,7 +17,6 @@ public class LoginDetailsService implements UserDetailsService {
     private final UsuarioRepository usuarioRepository;
 
 
-    private static final String USUARIO_NO_ENCONTRADO = "Usuario no encontrado con el nombre de usuario: %s";
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -10,6 +10,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+import static com.sistema.examenes.util.MensajesConstantes.*;
+
 @Service
 @RequiredArgsConstructor
 public class ExamenService {
@@ -17,13 +19,6 @@ public class ExamenService {
     private final ExamenRepository examenRepository;
 
     // Constantes de mensajes
-    private static final String EXAMEN_NULO = "El examen no puede ser nulo.";
-    private static final String ID_NULO = "El ID del examen no puede ser nulo.";
-    private static final String EXAMEN_NO_EXISTE = "El examen con ID %d no existe.";
-    private static final String TITULO_OBLIGATORIO = "El título del examen es obligatorio.";
-    private static final String CATEGORIA_OBLIGATORIA = "La categoría del examen es obligatoria.";
-    private static final String PUNTOS_MAXIMOS_OBLIGATORIOS = "Los puntos máximos son obligatorios.";
-    private static final String NUMERO_PREGUNTAS_OBLIGATORIO = "El número de preguntas es obligatorio.";
 
     // Agregar examen
     public Examen agregarExamen(Examen examen) {

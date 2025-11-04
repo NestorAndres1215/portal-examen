@@ -9,22 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
+import static com.sistema.examenes.util.MensajesConstantes.*;
+
 @Service
 @RequiredArgsConstructor
 public class PreguntaService {
 
     private final PreguntaRepository preguntaRepository;
 
-    // Constantes de mensajes
-    private static final String ID_NULO = "El ID de la pregunta no puede ser nulo.";
-    private static final String PREGUNTA_NO_EXISTE = "La pregunta con ID %d no existe.";
-    private static final String CONTENIDO_VACIO = "El contenido de la pregunta no puede estar vacío.";
-    private static final String RESPUESTA_VACIA = "La respuesta de la pregunta no puede estar vacía.";
-    private static final String OPCION1_VACIA = "La opción 1 de la pregunta no puede estar vacía.";
-    private static final String OPCION2_VACIA = "La opción 2 de la pregunta no puede estar vacía.";
-    private static final String OPCION3_VACIA = "La opción 3 de la pregunta no puede estar vacía.";
-    private static final String OPCION4_VACIA = "La opción 4 de la pregunta no puede estar vacía.";
-    private static final String EXAMEN_NULO = "El examen de la pregunta no puede ser nulo.";
 
     // Agregar pregunta
     public Pregunta agregarPregunta(Pregunta pregunta) {

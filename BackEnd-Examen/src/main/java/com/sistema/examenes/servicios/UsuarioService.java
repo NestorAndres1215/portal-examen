@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+import static com.sistema.examenes.util.MensajesConstantes.*;
+
 @Service
 @RequiredArgsConstructor
 public class UsuarioService {
@@ -17,11 +19,7 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
     private final RolRepository rolRepository;
 
-    private static final String USUARIO_NULO = "El usuario o el nombre de usuario no puede ser nulo.";
-    private static final String USUARIO_EXISTENTE = "El usuario ya está presente.";
-    private static final String ROLES_INVALIDOS = "El usuario debe tener al menos un rol asignado.";
-    private static final String ROL_NULO = "El rol no puede ser nulo.";
-    private static final String USUARIO_NO_EXISTE = "El usuario con ID %d no existe.";
+
 
     public Usuario guardarUsuario(Usuario usuario, Set<UsuarioRol> usuarioRoles) throws Exception {
 

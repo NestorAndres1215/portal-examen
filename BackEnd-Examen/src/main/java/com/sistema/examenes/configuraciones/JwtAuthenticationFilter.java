@@ -20,6 +20,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static com.sistema.examenes.util.MensajesConstantes.*;
+
 
 @Component
 @RequiredArgsConstructor
@@ -30,10 +32,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
 
-    private static final String BEARER_PREFIX = "Bearer ";
-    private static final String TOKEN_INVALIDO = "Token inválido, no empieza con Bearer string";
-    private static final String TOKEN_NO_VALIDO = "El token no es válido";
-    private static final String TOKEN_EXPIRADO = "El token ha expirado";
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,

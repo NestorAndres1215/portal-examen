@@ -8,17 +8,15 @@ import org.springframework.stereotype.Service;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import static com.sistema.examenes.servicios.PreguntaService.*;
+import static com.sistema.examenes.util.MensajesConstantes.*;
+
 @Service
 @RequiredArgsConstructor
 public class CategoriaService {
 
     private final CategoriaRepository categoriaRepository;
 
-    // Constantes de mensajes
-    private static final String TITULO_VACIO = "El título de la categoría no puede estar vacío.";
-    private static final String DESCRIPCION_VACIA = "La descripción de la categoría no puede estar vacía.";
-    private static final String CATEGORIA_NO_EXISTE = "La categoría con ID %d no existe.";
-    private static final String ID_NULO = "El ID de la categoría no puede ser nulo.";
 
 
     public Categoria agregarCategoria(Categoria categoria) {
