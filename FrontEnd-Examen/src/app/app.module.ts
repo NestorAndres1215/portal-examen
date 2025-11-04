@@ -23,7 +23,7 @@ import { HomeComponent } from './pages/home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-import { authInterceptorProviders } from './services/auth.interceptor';
+
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -42,6 +42,7 @@ import { LoadExamenComponent } from './pages/user/load-examen/load-examen.compon
 import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones.component';
 import { StartComponent } from './pages/user/start/start.component';
 import { NgxUiLoaderModule , NgxUiLoaderHttpModule } from "ngx-ui-loader";
+import { authInterceptorProviders } from './core/interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [

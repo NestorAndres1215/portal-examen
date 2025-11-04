@@ -1,5 +1,5 @@
 import  Swal  from 'sweetalert2';
-import { ExamenService } from './../../../services/examen.service';
+import { ExamenService } from '../../../core/services/examen.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

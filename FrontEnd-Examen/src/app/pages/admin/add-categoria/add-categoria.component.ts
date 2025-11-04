@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CategoriaService } from './../../../services/categoria.service';
+import { CategoriaService } from '../../../core/services/categoria.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

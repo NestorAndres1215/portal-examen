@@ -1,6 +1,6 @@
 import  Swal  from 'sweetalert2';
-import { CategoriaService } from './../../../services/categoria.service';
-import { ExamenService } from './../../../services/examen.service';
+import { CategoriaService } from '../../../core/services/categoria.service';
+import { ExamenService } from '../../../core/services/examen.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 

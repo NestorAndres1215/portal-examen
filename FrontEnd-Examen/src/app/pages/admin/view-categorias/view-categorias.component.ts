@@ -1,5 +1,5 @@
 import  Swal  from 'sweetalert2';
-import { CategoriaService } from './../../../services/categoria.service';
+import { CategoriaService } from '../../../core/services/categoria.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,5 +1,5 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { PreguntaService } from './../../../services/pregunta.service';
+import { PreguntaService } from '../../../core/services/pregunta.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';

@@ -10,8 +10,8 @@ import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria
 import { ViewCategoriasComponent } from './pages/admin/view-categorias/view-categorias.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { NormalGuard } from './services/normal.guard';
-import { AdminGuard } from './services/admin.guard';
+import { NormalGuard } from './core/guard/normal.guard';
+
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -20,6 +20,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizarExamenComponent } from './pages/admin/actualizar-examen/actualizar-examen.component';
+import { AdminGuard } from './core/guard/admin.guard';
 
 const routes: Routes = [
   {

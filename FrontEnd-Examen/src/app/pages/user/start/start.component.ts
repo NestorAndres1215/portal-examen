@@ -1,4 +1,4 @@
-import { PreguntaService } from './../../../services/pregunta.service';
+import { PreguntaService } from '../../../core/services/pregunta.service';
 import { ActivatedRoute } from '@angular/router';
 import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';

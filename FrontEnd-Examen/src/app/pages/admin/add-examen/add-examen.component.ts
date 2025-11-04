@@ -1,8 +1,8 @@
 import { Router } from '@angular/router';
-import { ExamenService } from './../../../services/examen.service';
+import { ExamenService } from '../../../core/services/examen.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import  Swal  from 'sweetalert2';
-import { CategoriaService } from './../../../services/categoria.service';
+import { CategoriaService } from '../../../core/services/categoria.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
