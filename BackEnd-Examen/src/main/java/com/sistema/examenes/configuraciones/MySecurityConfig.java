@@ -1,6 +1,7 @@
 package com.sistema.examenes.configuraciones;
 
-import com.sistema.examenes.servicios.UserDetailsServiceImpl;
+
+import com.sistema.examenes.servicios.LoginDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +25,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final JwtAuthenticationEntryPoint unauthorizedHandler;
 
-    private final UserDetailsServiceImpl userDetailsServiceImpl;
+    private final LoginDetailsService userDetailsServiceImpl;
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashSet;
 import java.util.Set;
 
+import static com.sistema.examenes.util.MensajesConstantes.*;
+
 @RestController
 @RequestMapping("/usuarios")
 @CrossOrigin("*")
@@ -25,31 +27,32 @@ public class UsuarioController {
     public Usuario guardarUsuario(@RequestBody Usuario usuario) throws Exception {
 
         if (usuario == null) {
-            throw new IllegalArgumentException("El usuario no puede ser nulo");
+            throw new IllegalArgumentException(USUARIO_NULO);
         }
         if (usuario.getUsername() == null || usuario.getUsername().trim().isEmpty()) {
-            throw new IllegalArgumentException("El nombre de usuario no puede estar vacío");
+            throw new IllegalArgumentException(USERNAME_VACIO);
         }
         if (usuario.getPassword() == null || usuario.getPassword().trim().isEmpty()) {
-            throw new IllegalArgumentException("La contraseña no puede estar vacía");
+            throw new IllegalArgumentException(PASSWORD_VACIA);
         }
         if (usuario.getEmail() == null || usuario.getEmail().trim().isEmpty()) {
-            throw new IllegalArgumentException("El email no puede estar vacío");
+            throw new IllegalArgumentException(EMAIL_VACIO);
         }
 
-        usuario.setPerfil("default.png");
+        usuario.setPerfil(PERFIL_DEFAULT);
         usuario.setPassword(this.bCryptPasswordEncoder.encode(usuario.getPassword()));
 
         Set<UsuarioRol> usuarioRoles = new HashSet<>();
 
-        Rol rol = new Rol();
-        rol.setRolId(1L);
-        rol.setRolNombre("ADMIN");
+        Rol rol =  Rol.builder()
+                .rolId(1L)
+                .rolNombre("ADMIN")
+                .build();
 
-        UsuarioRol usuarioRol = new UsuarioRol();
-        usuarioRol.setUsuario(usuario);
-        usuarioRol.setRol(rol);
-
+        UsuarioRol usuarioRol =  UsuarioRol.builder()
+                .usuario(usuario)
+                .rol(rol)
+                .build();
         usuarioRoles.add(usuarioRol);
         return usuarioService.guardarUsuario(usuario, usuarioRoles);
 
